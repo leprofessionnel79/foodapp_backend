@@ -33,7 +33,10 @@ class OrderController extends AdminController
         $grid->column('user_id', __('UserID'));
         $grid->column('order_amount', __('Amount'));
         $grid->column('payment_status', __('PaymentStatus'));
-        $grid->column('payment_method', __('PaymentMethod'));
+        $grid->payment_method('PaymentMethod')->display(function($PaymentMethod){
+            return $PaymentMethod==null?"cash":"paypal";
+        });
+        //$grid->column('payment_method', __('PaymentMethod'));
         $grid->column('transaction_reference', __('TransactionRef'));
         $grid->column('order_status', __('OrderStatus'));
         $grid->column('confirmed', __('Confirmed'));

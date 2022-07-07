@@ -41,6 +41,7 @@ class OrderDetailController extends AdminController
         $grid->column('test', __('Test'));
 
 
+
         // //$grid->column('email_verified_at', __('Email verified at'));
         // $grid->email_verified_at("Verified")->display(function($verified){
         //     return $verified?"Yes":"No";
