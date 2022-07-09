@@ -29,6 +29,7 @@ class UserController extends AdminController
         //$grid->column('id', __('Id')); you can also write this line like following :
         $grid->id("User ID");
         $grid->column('f_name', __('Name'));
+        $grid->column('phone', __('Phone'));
         $grid->column('email', __('Email'));
         //$grid->column('email_verified_at', __('Email verified at'));
         $grid->email_verified_at("Verified")->display(function($verified){
@@ -38,6 +39,10 @@ class UserController extends AdminController
         // $grid->column('remember_token', __('Remember token'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+        $grid->filter(function($filter){
+            $filter->like('f_name', __('Name'));
+            $filter->like('phone', __('Phone'));
+        });
 
         return $grid;
     }
