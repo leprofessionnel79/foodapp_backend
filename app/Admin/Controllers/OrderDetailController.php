@@ -26,6 +26,9 @@ class OrderDetailController extends AdminController
      */
     protected function grid()
     {
+
+
+
         $grid = new Grid(new OrderDetail());
         $grid->model()->latest();
         $grid->column('id', __('OredrDetail ID'));
@@ -33,23 +36,22 @@ class OrderDetailController extends AdminController
         $grid->column('order_id', __('OrderID'));
         $grid->column('food_id', __('FoodID'));
         $grid->column('price', __('Price'));
-        $grid->column('food_details', __('FoodDetails'));
+
+
+        $grid->column('food_details', __('FoodDetails'))->width(300);
+        //$grid->column('food_details');
+        //$grid->column('food_details')->editable();
+       // $grid->column('food_details')->color('#ffff00');
         $grid->column('quantity', __('Quantity'));
         $grid->column('tax_amount', __('TaxAmount'));
         $grid->column('created_at', __('CreatedAt'));
+
         $grid->column('updated_at', __('UpdatedAt'));
         $grid->column('test', __('Test'));
 
 
 
-        // //$grid->column('email_verified_at', __('Email verified at'));
-        // $grid->email_verified_at("Verified")->display(function($verified){
-        //     return $verified?"Yes":"No";
-        // });
-        // // $grid->column('password', __('Password'));
-        // // $grid->column('remember_token', __('Remember token'));
-        // $grid->column('created_at', __('Created at'));
-        // $grid->column('updated_at', __('Updated at'));
+
 
         return $grid;
     }
@@ -76,14 +78,7 @@ class OrderDetailController extends AdminController
         $show->field('test', __('Test'));
 
 
-        // $show->field('id', __('Id'));
-        // $show->field('name', __('Name'));
-        // $show->field('email', __('Email'));
-        // $show->field('email_verified_at', __('Email verified at'));
-        // $show->field('password', __('Password'));
-        // $show->field('remember_token', __('Remember token'));
-        // $show->field('created_at', __('Created at'));
-        // $show->field('updated_at', __('Updated at'));
+
 
         return $show;
     }
@@ -110,11 +105,7 @@ class OrderDetailController extends AdminController
         $form->display('test', __('Test'));
 
 
-        // $form->text('name', __('Name'));
-        // $form->email('email', __('Email'));
-        // $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
-        // $form->password('password', __('Password'));
-        // $form->text('remember_token', __('Remember token'));
+
 
         return $form;
     }

@@ -37,7 +37,7 @@ class OrderController extends AdminController
             return $PaymentMethod==null?"cash":"paypal";
         });
         //$grid->column('payment_method', __('PaymentMethod'));
-        $grid->column('transaction_reference', __('TransactionRef'));
+        $grid->column('transaction_reference', __('TransactionRef'))->width(150);
         $grid->column('order_status', __('OrderStatus'));
         $grid->column('confirmed', __('Confirmed'));
         $grid->column('accepted', __('Accepted'));
@@ -59,14 +59,7 @@ class OrderController extends AdminController
         $grid->column('delivered', __('Delivered'));
         $grid->column('canceled', __('Canceled'));
 
-        // //$grid->column('email_verified_at', __('Email verified at'));
-        // $grid->email_verified_at("Verified")->display(function($verified){
-        //     return $verified?"Yes":"No";
-        // });
-        // // $grid->column('password', __('Password'));
-        // // $grid->column('remember_token', __('Remember token'));
-        // $grid->column('created_at', __('Created at'));
-        // $grid->column('updated_at', __('Updated at'));
+
 
         return $grid;
     }
@@ -108,14 +101,7 @@ class OrderController extends AdminController
         $show->field('delivered', __('Delivered'));
         $show->field('canceled', __('Canceled'));
 
-        // $show->field('id', __('Id'));
-        // $show->field('name', __('Name'));
-        // $show->field('email', __('Email'));
-        // $show->field('email_verified_at', __('Email verified at'));
-        // $show->field('password', __('Password'));
-        // $show->field('remember_token', __('Remember token'));
-        // $show->field('created_at', __('Created at'));
-        // $show->field('updated_at', __('Updated at'));
+
 
         return $show;
     }
@@ -157,11 +143,7 @@ class OrderController extends AdminController
         $form->display('delivered', __('Delivered'));
         $form->display('canceled', __('Canceled'));
 
-        // $form->text('name', __('Name'));
-        // $form->email('email', __('Email'));
-        // $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
-        // $form->password('password', __('Password'));
-        // $form->text('remember_token', __('Remember token'));
+
 
         return $form;
     }
