@@ -31,21 +31,14 @@ class OrderController extends AdminController
         $grid->column('id', __('Oredr ID'));
        // $grid->id("Oredr ID");
         $grid->column('user_id', __('UserID'));
-        $grid->column('order_amount', __('Amount'));
+        $grid->column('order_amount', __('السعر الاجمالي'));
         $grid->column('payment_status', __('PaymentStatus'));
-        $grid->payment_method('PaymentMethod')->display(function($PaymentMethod){
-            return $PaymentMethod==null?"cash":"paypal";
-        });
-        //$grid->column('payment_method', __('PaymentMethod'));
+        // $grid->payment_method('PaymentMethod')->display(function($PaymentMethod){
+        //     return $PaymentMethod==null?"cash":"paypal";
+        // });
+        $grid->column('payment_method', __('PaymentMethod'));
         $grid->column('transaction_reference', __('TransactionRef'))->width(150);
         $grid->column('order_status', __('OrderStatus'));
-        $grid->column('confirmed', __('Confirmed'));
-        $grid->column('accepted', __('Accepted'));
-        $grid->column('scheduled', __('Scheduled'));
-        $grid->column('processing', __('Processing'));
-        $grid->column('handover', __('Handover'));
-        $grid->column('failed', __('Failed'));
-        $grid->column('scheduled_at', __('Scheduled_At'));
         $grid->column('delivery_address_id', __('DeliveryAddressID'));
         $grid->column('order_note', __('OrderNote'));
         $grid->column('order_type', __('OrderType'));
@@ -53,6 +46,13 @@ class OrderController extends AdminController
         $grid->column('updated_at', __('UpdatedAt'));
         $grid->column('delivery_charge', __('DeliveryCharge'));
         $grid->column('delivery_address', __('DeliveryAddress'));
+        $grid->column('confirmed', __('Confirmed'));
+        $grid->column('accepted', __('Accepted'));
+        $grid->column('scheduled', __('Scheduled'));
+        $grid->column('processing', __('Processing'));
+        $grid->column('handover', __('Handover'));
+        $grid->column('failed', __('Failed'));
+        $grid->column('scheduled_at', __('Scheduled_At'));
         $grid->column('otp', __('OTP'));
         $grid->column('pending', __('Pending'));
         $grid->column('picked_up', __('PickedUp'));

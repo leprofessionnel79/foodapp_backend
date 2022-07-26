@@ -24,9 +24,9 @@ class ConfigController extends Controller
         if ($validator->errors()->count()>0) {
             return response()->json(['errors' => Helpers::error_processor($validator)], 403);
         }
-
+        ///AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs
         $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json?latlng='
-        .$request->lat.','.$request->lng.'&key='."AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs");
+        .$request->lat.','.$request->lng.'&key='."AIzaSyDgV3T_Ortgj1la3CCl-QdCZrQJUoMouxU");
         return $response->json();
     }
 
@@ -40,10 +40,10 @@ class ConfigController extends Controller
         if ($validator->errors()->count()>0) {
             return response()->json(['errors' => Helpers::error_processor($validator)], 403);
         }
-
+        ///AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs
         $response = Http::get('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='
         .$request['search_text']
-        .'&key='."AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs");
+        .'&key='."AIzaSyDgV3T_Ortgj1la3CCl-QdCZrQJUoMouxU");
         return $response->json();
     }
 
@@ -57,10 +57,10 @@ class ConfigController extends Controller
         if ($validator->errors()->count()>0) {
             return response()->json(['errors' => Helpers::error_processor($validator)], 403);
         }
-
+        ///AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs
         $response = Http::get('https://maps.googleapis.com/maps/api/place/details/json?placeid='
         .$request['place_id']
-        .'&key='."AIzaSyAIu8iXd5Fm3La-4kRP9N0qnO80g4CDGRs");
+        .'&key='."AIzaSyDgV3T_Ortgj1la3CCl-QdCZrQJUoMouxU");
         return $response->json();
     }
         public function get_zone(Request $request)
