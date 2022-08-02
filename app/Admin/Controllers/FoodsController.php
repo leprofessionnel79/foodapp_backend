@@ -15,6 +15,12 @@ use Encore\Admin\Layout\Content;
 
 class FoodsController extends AdminController
 {
+
+    public function destroy($id)
+    {
+        return null;//$this->form()->destroy($id);
+    }
+
     /**
      * Title for current resource.
      *

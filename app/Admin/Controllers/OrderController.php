@@ -12,6 +12,7 @@ use Encore\Admin\Layout\Content;
 
 class OrderController extends AdminController
 {
+
     /**
      * Title for current resource.
      *
@@ -27,6 +28,14 @@ class OrderController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Order());
+
+        // $grid->actions(function ($actions) {
+        //     $actions->disableDelete();
+        //     $actions->disableEdit();
+        //     $actions->disableView();
+        // });
+
+
         $grid->model()->latest();
         $grid->column('id', __('Oredr ID'));
        // $grid->id("Oredr ID");
